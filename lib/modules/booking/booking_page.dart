@@ -128,7 +128,7 @@ class _BookingPageState extends State<BookingPage> {
           toDate: toDate!,
         );
         Get.back();
-        Get.snackbar("تم", "تم تعديل الحجز بنجاح",
+        Get.snackbar("تم", " تم تعديل الحجز بنجاح بانتظار الموافقة من المالك",
             backgroundColor: Colors.green, colorText: Colors.white);
       } else {
         // إنشاء حجز جديد

@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 class BookingService {
   static String get baseUrl {
     if (kIsWeb) return "http://127.0.0.1:8000/api";
-    if (Platform.isAndroid) return "http://192.168.90.4:8000/api";
+    if (Platform.isAndroid) return "http://192.168.26.13:8000/api";
     return "http://127.0.0.1:8000/api";
   }
 

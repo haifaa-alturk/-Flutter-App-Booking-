@@ -8,6 +8,10 @@ import 'package:cozy_app/modules/booking/my_bookings_page.dart';
 import 'package:cozy_app/modules/favorites/favorites_page.dart';
 import 'package:cozy_app/modules/profile/profile_page.dart';
 
+// ignore: unused_import
+import 'package:cozy_app/modules/chat/chat_list_page.dart'; // ✅ أضف هذا الاستيراد
+
+
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
@@ -30,13 +34,15 @@ class _MainPageState extends State<MainPage> {
         ? [
       HomePage(),
       MyApartmentsPage(),              // شققي
-      const OwnerBookingRequestsPage(),      // طلبات الحجز (جديد)
+      const OwnerBookingRequestsPage(),      // طلبات الحجز (جديد)   
+         ChatListPage(),                       // ✅ المراسلات
       FavoritesPage(),
       ProfilePage(),
     ]
         : [
       HomePage(),
-      const MyBookingsPage(),                // حجوزاتي
+      const MyBookingsPage(),                // حجوزاتي 
+         ChatListPage(),                       // ✅ المراسلات
       FavoritesPage(),
       ProfilePage(),
     ];
@@ -47,12 +53,14 @@ class _MainPageState extends State<MainPage> {
       BottomNavigationBarItem(icon: Icon(Icons.home), label: "الرئيسية"),
       BottomNavigationBarItem(icon: Icon(Icons.home_work), label: "شُقَقي"),
       BottomNavigationBarItem(icon: Icon(Icons.bookmark_added), label: "الطلبات"),
+            BottomNavigationBarItem(icon: Icon(Icons.message), label: "المراسلات"), // ✅ جديدة
       BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "المفضلة"),
       BottomNavigationBarItem(icon: Icon(Icons.person), label: "حسابي"),
     ]
         : const [
       BottomNavigationBarItem(icon: Icon(Icons.home), label: "الرئيسية"),
       BottomNavigationBarItem(icon: Icon(Icons.list_alt), label: "حجوزاتي"),
+            BottomNavigationBarItem(icon: Icon(Icons.message), label: "المراسلات"), // ✅ جديدة
       BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "المفضلة"),
       BottomNavigationBarItem(icon: Icon(Icons.person), label: "حسابي"),
     ];

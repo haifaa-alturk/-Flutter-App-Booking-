@@ -229,6 +229,7 @@ class _ApartmentDetailsPageState extends State<ApartmentDetailsPage> {
             ),
 
             const SizedBox(height: 24),
+            
 
             // التقييمات
             Padding(

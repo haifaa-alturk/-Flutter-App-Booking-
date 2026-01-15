@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:cozy_app/controllers/auth_controller.dart';
 import 'package:cozy_app/modules/apartment/apartment_details_page.dart';
 import 'package:cozy_app/modules/home/add_apartment_page.dart';
@@ -6,6 +8,11 @@ import 'package:cozy_app/services/apartment_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'apartment_card.dart';
+
+import 'package:cozy_app/modules/chat/chat_list_page.dart'; // ✅ استيراد صفحة المراسلات
+
+import 'package:cozy_app/controllers/chat_controller.dart'; // ✅ استيراد الـ controller
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -140,7 +147,62 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text("Available Apartments"),
         backgroundColor: Colors.teal,
+//       actions: [
+//   IconButton(
+//     icon: Stack(
+//       children: [
+//         Icon(Icons.message, color: Colors.white),
+//         // مؤشر الرسائل غير المقروءة
+//         Positioned(
+//           right: 0,
+//           top: 0,
+//           child: Obx(() {
+//             // ✅ استخدم GetInstance بدلاً من Get.find مباشرة
+//             try {
+//               final chatController = GetInstance().find<ChatController>();
+//               final unreadCount = chatController.conversations
+//                   .fold(0, (sum, chat) => sum + chat.unreadCount);
+//               if (unreadCount > 0) {
+//                 return Container(
+//                   padding: EdgeInsets.all(2),
+//                   decoration: BoxDecoration(
+//                     color: Colors.red,
+//                     borderRadius: BorderRadius.circular(10),
+//                   ),
+//                   constraints: BoxConstraints(
+//                     minWidth: 16,
+//                     minHeight: 16,
+//                   ),
+//                   child: Text(
+//                     unreadCount > 9 ? '9+' : unreadCount.toString(),
+//                     style: TextStyle(
+//                       color: Colors.white,
+//                       fontSize: 10,
+//                     ),
+//                     textAlign: TextAlign.center,
+//                   ),
+//                 );
+//               }
+//             } catch (e) {
+//               // إذا لم يكن Controller مسجلاً، تجاهل
+//               print('ChatController not ready yet: $e');
+//             }
+//             return SizedBox.shrink();
+//           }),
+//         ),
+//       ],
+//     ),
+//     onPressed: () {
+//       // ✅ تحقق من تسجيل Controller قبل الانتقال
+//       if (!Get.isRegistered<ChatController>()) {
+//         Get.put(ChatController());
+//       }
+//       Get.to(() => ChatListPage());
+//     },
+//   ),
+// ],
       ),
+        
       body: Column(
         children: [
           // صندوق البحث

@@ -9,4 +9,5 @@ class AppRoutes {
   static const String adminDashboard = '/admin/dashboard';
   static const String approveUsers = '/admin/users';
   static const String approveApartments = '/admin/apartments';
+  static const String chatList = '/chat'; // ✅ جديد
 }

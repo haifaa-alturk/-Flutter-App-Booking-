@@ -1,6 +1,7 @@
+import 'package:cozy_app/controllers/booking_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../controllers/bokking_controller.dart';
+
 import '../../data/models/booking.dart';
 import '../home/apartment_model.dart';
 import 'booking_page.dart';
